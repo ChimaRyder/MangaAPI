@@ -1,15 +1,9 @@
-import netscape.javascript.JSObject;
-
-import javax.management.Query;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
-import java.util.Scanner;
-
 import org.json.*;
 
 public class mangaAPI {
@@ -21,7 +15,7 @@ public class mangaAPI {
 
     }
 
-    public String randomManga() throws IOException{
+    public String randomManga(){
         try {
             System.out.println("connecting to MangaDex API...");
             URL localurl = new URL(url.toString() + "/random");
@@ -51,7 +45,7 @@ public class mangaAPI {
         return "error reading file :P";
     }
 
-    public void searchManga(String title) throws IOException {
+    public void searchManga(String title) {
         title = title.replaceAll("\\s", "+");
 
         try {
